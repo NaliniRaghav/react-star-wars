@@ -1,17 +1,4 @@
 
-// import React from 'react';
-// import { createRoot } from 'react-dom/client';
-// import './App.css';
-// import App from './App.jsx';
-
-// const rootElement = document.getElementById('root');
-// const root = createRoot(rootElement); // Create root using React 18
-
-// root.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// );
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
