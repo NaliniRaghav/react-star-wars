@@ -1,4 +1,4 @@
-import React from 'react';
+ 
 import './StarshipCard.css';
 
 const StarshipCard = ({ starship }) => {

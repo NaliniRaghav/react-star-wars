@@ -1,6 +1,6 @@
  
 import './components/StarshipCard.css';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { getAllStarships } from './services/sw-api';
 import StarshipCard from './components/StarshipCard.jsx';
 import './App.css';
@@ -9,23 +9,23 @@ const App = () => {
   const [starships, setStarships] = useState([]);
   const [nextPage, setNextPage] = useState(null);
 
-  // Fetch initial data
+  
   useEffect(() => {
     async function fetchStarships() {
       const starshipsData = await getAllStarships();
       setStarships(starshipsData.results);
-      setNextPage(starshipsData.next);  // Store the next page URL
+      setNextPage(starshipsData.next);  
     }
     fetchStarships();
   }, []);
 
-  // Function to load the next page
+   
   const loadMoreStarships = async () => {
-    if (!nextPage) return; // If there's no next page, do nothing
+    if (!nextPage) return; 
     const res = await fetch(nextPage);
     const data = await res.json();
-    setStarships([...starships, ...data.results]);  // Append new starships
-    setNextPage(data.next);  // Update the next page URL
+    setStarships([...starships, ...data.results]);  
+    setNextPage(data.next);  
   };
 
   return (
