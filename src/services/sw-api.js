@@ -1,10 +1,14 @@
 
   export async function getAllStarships() {
+    try {
     const res = await fetch('https://swapi.dev/api/starships/');
     const data = await res.json();
     return data;  
+  } catch (error) {
+    console.error("Error fetching starships:", error);
+       throw error;
   }
-
+  }
   
   // import axios from 'axios';
 
